@@ -51,7 +51,7 @@ Le asignamos el entero correspondiente a la cadena en base dos del exponente a u
 Tomamos la posición de cada 1 en la mantisa:
 
 $$
-p_1, \, \, p_2, \, \, ... \, \, , p_n
+p_1, \; p_2, \; ... \; , \; p_n
 $$
 
 A una variable decimal `F` le asignamos:
