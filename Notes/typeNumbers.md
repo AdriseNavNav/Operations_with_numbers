@@ -57,7 +57,7 @@ $$
 A una variable decimal `F` le asignamos:
 
 $$
-F = \, \, \sum_{i \, \, = \, \, 1}^{n} 2^{\, -p_i}
+F = \sum_{i = 1}^{n} 2^{-p_i}
 $$
 
 A una variable entera `G` le damos el valor que tenga la cadena signo (0 o 1).
@@ -67,7 +67,7 @@ A una variable entera `G` le damos el valor que tenga la cadena signo (0 o 1).
 El valor es de tipo numérico (normal) y es igual a:
 
 $$
-\text{Valor} = (-1)^{\text{G}} \times 2^{\text{E} \, \, - \, \, 1023} \times \left( \, \, 1.0 \, \, + \, \, \text{F} \, \, \right)
+\text{Valor} = (-1)^{\text{G}} \times 2^{\text{E} - 1023} \times \left( 1.0 + \text{F} \right)
 $$
 
 **Caso 2**: Si el exponente es igual a 0:
@@ -77,7 +77,7 @@ $$
 **Caso 2.2**: Si, por el contrario, la mantisa no es una cadena de solo 0, entonces el valor sera de tipo numérico (subnormal) y es igual a:
 
 $$
-\text{Valor} = (-1)^{\text{G}} \times 2^{ \, - \, \, 1022} \times \text{F}
+\text{Valor} = (-1)^{\text{G}} \times 2^{ - 1022} \times \text{F}
 $$
 
 **Caso 3**: Si el exponente es igual a 2047:
@@ -90,111 +90,111 @@ $$
 
 El número uno:
 
-$0 \, \, \, \, 01111111111 \, \, \, \, 0000000000000000000000000000000000000000000000000000$
-$+ \, \, \, \, \, \, 2^{1023 \, \, - \, \, 1023} \, \, \times \, \, \, \, \, \, ( \, \, 1.0 \, \, )$
-$= \, \, 1.0$
+$0 \quad 01111111111 \quad  0000000000000000000000000000000000000000000000000000$
+$+ \quad \quad 2^{1023 - 1023} \quad \times \quad ( 1.0 )$
+$= \quad 1.0$
 
 El número mas pequeño mayor a uno:
 
-$0 \, \, \, \, 01111111111 \, \, \, \, 0000000000000000000000000000000000000000000000000001$
-$+ \, \, \, \, \, \, 2^{1023 \, \, - \, \, 1023} \, \, \times \, \, \, \, \, \, ( \, \, 1.0 \, \, + \, \, 2^{-52} \, \, )$
-$= \, \, 1.0000000000000002220$
+$0 \quad 01111111111 \quad 0000000000000000000000000000000000000000000000000001$
+$+ \quad \quad 2^{1023 - 1023} \quad \times \quad ( 1.0 + 2^{-52} )$
+$= \quad 1.0000000000000002220$
 
 El segundo número mas pequeño mayor a uno:
 
-$0 \, \, \, \, 01111111111 \, \, \, \, 0000000000000000000000000000000000000000000000000010$
-$+ \, \, \, \, \, \, 2^{1023 \, \, - \, \, 1023} \, \, \times \, \, \, \, \, \, ( \, \, 1.0 \, \, + \, \, 2^{-51} \, \, )$
-$= \, \, 1.0000000000000004441$
+$0 \quad 01111111111 \quad 0000000000000000000000000000000000000000000000000010$
+$+ \quad \quad 2^{1023 - 1023} \quad \times \quad ( 1.0 + 2^{-51} )$
+$= \quad 1.0000000000000004441$
 
 El número dos:
 
-$0 \, \, \, \, 10000000000 \, \, \, \, 0000000000000000000000000000000000000000000000000000$
-$+ \, \, \, \, \, \, 2^{1024 \, \, - \, \, 1023} \, \, \times \, \, \, \, \, \, ( \, \, 1.0 \, \, )$
-$= \, \, 2.0$
+$0 \quad 10000000000 \quad 0000000000000000000000000000000000000000000000000000$
+$+ \quad \quad 2^{1024 - 1023} \quad \times \quad ( 1.0 )$
+$= \quad 2.0$
 
 El número tres:
 
-$0 \, \, \, \, 10000000000 \, \, \, \, 1000000000000000000000000000000000000000000000000000$
-$+ \, \, \, \, \, \, 2^{1024 \, \, - \, \, 1023} \, \, \times \, \, \, \, \, \, ( \, \, 1.0 \, \, + \, \, 2^{-1} \, \, )$
-$= \, \, 3.0$
+$0 \quad 10000000000 \quad 1000000000000000000000000000000000000000000000000000$
+$+ \quad \quad 2^{1024 - 1023} \quad \times \quad ( 1.0 + 2^{-1} )$
+$= \quad 3.0$
 
 El número menos uno:
 
-$1 \, \, \, \, 01111111111 \, \, \, \, 0000000000000000000000000000000000000000000000000000$
-$- \, \, \, \, \, \, 2^{1023 \, \, - \, \, 1023} \, \, \times \, \, \, \, \, \, ( \, \, 1.0 \, \, )$
-$= \, \, -1.0$
+$1 \quad 01111111111 \quad 0000000000000000000000000000000000000000000000000000$
+$- \quad \quad 2^{1023 - 1023} \quad \times \quad ( 1.0 )$
+$= \quad -1.0$
 
 Aproximación de un tercio:
 
-$0 \, \, \, \, 01111111101 \, \, \, \, 0101010101010101010101010101010101010101010101010101$
-$+ \, \, \, \, \, \, 2^{2046 \, \, - \, \, 1023} \, \, \times \, \, \, \, \, \, ( \, \, 1.0 \, \, + \, \, 2^{-2} + \, \, 2^{-4} \, \, + \, \, . \, \, . \, \, .  + \, \, 2^{-52} \, \, )$
-$= \, \, 0.33333333333333331483$
+$0 \quad 01111111101 \quad 0101010101010101010101010101010101010101010101010101$
+$+ \quad \quad 2^{2046 - 1023} \quad \times \quad ( 1.0 + 2^{-2} + 2^{-4} + . . . + 2^{-52} )$
+$= \quad 0.33333333333333331483$
 
 Aproximación de PI:
 
-$0 \, \, \, \, 10000000000 \, \, \, \, 1001001000011111101101010100010001000010110100011000$
-$= \, \, 3.141592653589793116$
+$0 \quad 10000000000 \quad 1001001000011111101101010100010001000010110100011000$
+$= \quad 3.141592653589793116$
 
 El número normal positivo mas pequeño:
 
-$0 \, \, \, \, 00000000001 \, \, \, \, 0000000000000000000000000000000000000000000000000001$
-$+ \, \, \, \, \, \, 2^{1 \, \, - \, \, 1023} \, \, \times \, \, \, \, \, \, ( \, \, 1.0 \, \, )$
-$= \, \, 2.2250738585072014 × 10^{−308}$
+$0 \quad 00000000001 \quad 0000000000000000000000000000000000000000000000000001$
+$+ \quad \quad 2^{1 - 1023} \quad \times \quad ( 1.0 )$
+$= \quad 2.2250738585072014 × 10^{−308}$
 
 El número normal mas grande:
 
-$0 \, \, \, \, 11111111110 \, \, \, \, 1111111111111111111111111111111111111111111111111111$
-$+ \, \, \, \, \, \, 2^{2046 \, \, - \, \, 1023} \, \, \times \, \, \, \, \, \, ( \, \, 1.0 \, \, + \, \, 2^{-1} + \, \, 2^{-2} \, \, + \, \, . \, \, . \, \, .  + \, \, 2^{-52} \, \, )$
-$= \, \, 1.7976931348623157 × 10^{308}$
+$0 \quad 11111111110 \quad 1111111111111111111111111111111111111111111111111111$
+$+ \quad \quad 2^{2046 - 1023} \quad \times \quad ( 1.0 + 2^{-1} + 2^{-2} + . . . + 2^{-52} )$
+$= \quad 1.7976931348623157 × 10^{308}$
 
 El número subnormal positivo mas pequeño:
 
-$0 \, \, \, \, 00000000000 \, \, \, \, 0000000000000000000000000000000000000000000000000001$
-$+ \, \, \, \, \, \, 2^{-1022} \, \, \times \, \, \, \, \, \, ( \, \, 2^{-52} \, \, )$
-$= \, \, 4.9406564584124654 × 10^{−324}$
+$0 \quad 00000000000 \quad 0000000000000000000000000000000000000000000000000001$
+$+ \quad \quad 2^{-1022} \quad \times \quad ( 2^{-52} )$
+$=  \quad 4.9406564584124654 × 10^{−324}$
 
 El número subnormal mas grande:
 
-$0 \, \, \, \, 00000000000 \, \, \, \, 1111111111111111111111111111111111111111111111111111$
-$+ \, \, \, \, \, \, 2^{-1022} \, \, \times \, \, \, \, \, \, ( \, \, 2^{-1} + \, \, 2^{-2} \, \, + \, \, . \, \, . \, \, .  + \, \, 2^{-52} \, \, )$
-$= \, \, 2.2250738585072009 × 10^{-308}$
+$0 \quad 00000000000 \quad 1111111111111111111111111111111111111111111111111111$
+$+ \quad \quad 2^{-1022} \quad \times \quad ( 2^{-1} + 2^{-2} + . . . + 2^{-52} )$
+$= \quad 2.2250738585072009 × 10^{-308}$
 
 El cero positivo:
 
-$0 \, \, \, \, 00000000000 \, \, \, \, 0000000000000000000000000000000000000000000000000000$
-$+ \, \, \, \, \, \, 2^{-1022} \, \, \times \, \, \, \, \, \, ( \, \, 0.0 \, \, )$
-$= +0.0$
+$0 \quad 00000000000 \quad 0000000000000000000000000000000000000000000000000000$
+$+ \quad \quad 2^{-1022} \quad \times \quad ( 0.0 )$
+$= \quad +0.0$
 
 El cero negativo:
 
-$1 \, \, \, \, 00000000000 \, \, \, \, 0000000000000000000000000000000000000000000000000000$
-$- \, \, \, \, \, \, 2^{-1022} \, \, \times \, \, \, \, \, \, ( \, \, 0.0 \, \, )$
-$= -0.0$
+$1 \quad 00000000000 \quad 0000000000000000000000000000000000000000000000000000$
+$- \quad \quad 2^{-1022} \quad \times \quad ( 0.0 )$
+$= \quad -0.0$
 
 El infinito positivo:
 
-$0 \, \, \, \, 11111111111 \, \, \, \, 0000000000000000000000000000000000000000000000000000$
-$= + \infty$
+$0 \quad 11111111111 \quad 0000000000000000000000000000000000000000000000000000$
+$= \quad + \infty$
 
 El infinito negativo:
 
-$1 \, \, \, \, 11111111111 \, \, \, \, 0000000000000000000000000000000000000000000000000000$
-$= - \infty$
+$1 \quad 11111111111 \quad 0000000000000000000000000000000000000000000000000000$
+$= \quad - \infty$
 
 Valor no numérico (`sNaN`):
 
-$0 \, \, \, \, 11111111111 \, \, \, \, 0000000000000000000000000000000000000000000000000001$
-$= \text{NaN}$
+$0 \quad 11111111111 \quad 0000000000000000000000000000000000000000000000000001$
+$= \quad \text{NaN}$
 
 Valor no numérico (`qNaN`):
 
-$0 \, \, \, \, 11111111111 \, \, \, \, 1000000000000000000000000000000000000000000000000001$
-$= \text{NaN}$
+$0 \quad 11111111111 \quad 1000000000000000000000000000000000000000000000000001$
+$= \quad \text{NaN}$
 
 Valor no numérico (`qNaN`):
 
-$0 \, \, \, \, 11111111111 \, \, \, \, 1111111111111111111111111111111111111111111111111111$
-$= \text{NaN}$
+$0 \quad 11111111111 \quad 1111111111111111111111111111111111111111111111111111$
+$= \quad \text{NaN}$
 
 ### Rango
 
@@ -240,31 +240,31 @@ Si elegimos asignarle a `y` como exponente el sucesor del exponente `E` de `x`, 
 El enfoque correcto es asignarle a `y` el sucesor de la mantisa de `x`, aumentando el exponente si se da el caso anterior. De este modo, si `F` corresponde al valor de la mantisa, `F + 2^-52` será el sucesor de acuerdo a su definición y la de suma binaria. Aplicando esto a una fórmula:
 
 $$
-y = \, \, 2^{\text{E} \, \, - \, \, 1023} \times ( \, \, 1.0 \, \, + \, \, \text{F} \, \, + \, \, 2^{-52} \, \, ) =  \, \, x \, \, + \, \, 2^{\text{E} \, \, - \, \, 1023 - \, \, 52 }
+y = 2^{\text{E} - 1023} \times ( 1.0 + \text{F} + 2^{-52} ) = x + 2^{\text{E} - 1023 - 52 }
 $$
 
 Si consideramos que el exponente real `e` es `E - 1023`, el margen entre ambos valores será:
 
 $$
-y \, \, -  \, \, x \, \, = \, \, 2^{e \, \, - \, \, 52}
+y -  x = 2^{e - 52}
 $$
 
 Además, de la definición de `x` como número normal `double` se tiene: 
 
 $$
-e \, \, = \, \, \left\lfloor \log_2 \left| x \right| \right\rfloor
+e = \left\lfloor \log_2 \left| x \right| \right\rfloor
 $$
 
 Por lo que nuestra función de margen entre un número `double` `x` y su mayor mas cercano es:
 
 $$
-M(x) = \, \, 2^{ \, \, \left\lfloor \log_2 \left| x \right| \right\rfloor \, \, - \, \, 52}
+M(x) = 2^{ \left\lfloor \log_2 \left| x \right| \right\rfloor - 52}
 $$
 
 La cual admite negativos debido al valor absoluto. Así, el número de decimales correctos de un `double` `x` corresponde a la parte entero del negativo del logaritmo en base diez de nuestra función margen:
 
 $$
-D(x) = \, \, \left\lfloor \log_{10}  \left( 2^{ \, \, \left\lfloor \log_2 \left| x \right| \right\rfloor \, \, - \, \, 52} \right) \right\rfloor
+D(x) = \left\lfloor \log_{10}  \left( 2^{ \left\lfloor \log_2 \left| x \right| \right\rfloor - 52} \right) \right\rfloor
 $$
 
 En particular, para 9007199254740992 ese valor es de -1. Para interpretar este resultado debemos considerar que un valor de 2 indicaría que un número es preciso hasta su centésimas, para 1 tendríamos garantía hasta sus decímas, con 0 serían sus unidades y para -1 solo tenemos asegurado el valor de las decenas. De este modo, cualquier valor entre 9007199254740992 y 9007199254741002 podría ser indistinguible, afortunadamente esto solo nos da la garantía pues si se compila y ejecuta el siguiente codigo:
