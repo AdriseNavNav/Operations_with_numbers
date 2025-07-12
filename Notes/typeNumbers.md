@@ -82,7 +82,7 @@ $$
 
 **Caso 3**: Si el exponente es igual a 2047:
 
-**Caso 3.1**: Si, además, la mantisa es una cadena de solo 1, entonces el valor será de tipo numérico con + $ \infty $ si el signo es 0 y - $ \infty $ si es 1.
+**Caso 3.1**: Si, además, la mantisa es una cadena de solo 1, entonces el valor será de tipo numérico con $+\infty$ si el signo es 0 y $-\infty$ si es 1.
 
 **Caso 3.2**: Si, por el contrario, la mantisa no es una cadena de solo 1, entonces el valor sera de tipo `NaN`. Aunque existen recomendaciones y distinciones entre los valores `sNaN` y `qNaN` los detalles se escapan de los fines de este documento.
 
